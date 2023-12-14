@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ClassLibrary.Handin.Services;
 
-internal class FileService : IFileServie
+internal class FileService : IFileService
 {
     public string GetContentFromFile(string filepath)
     {

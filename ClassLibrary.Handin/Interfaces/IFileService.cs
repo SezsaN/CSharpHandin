@@ -1,6 +1,6 @@
 ﻿namespace ClassLibrary.Handin.Interfaces;
 
-internal interface IFileServie
+internal interface IFileService
 {
 
     /// <summary>
