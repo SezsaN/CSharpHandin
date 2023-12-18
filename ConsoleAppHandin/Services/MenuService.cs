@@ -154,7 +154,7 @@ internal class MenuService : IMenuService
 
     private void ShowSearchContactMenu()
     {
-        DisplayMenuTitle("Search a contact by entering the contacts emailadress");
+        DisplayMenuTitle("Search a contact by entering the contacts emailadress"); 
 
         Console.Write("Enter email address: ");
         var email = Console.ReadLine();
