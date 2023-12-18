@@ -65,35 +65,32 @@ internal class MenuService : IMenuService
 
     private void ShowDeleteContactMenu()
     {
+        var contacts = _contacts.GetAllContactsFromList();
         DisplayMenuTitle("Delete a contact by entering the contacts emailadress");
 
         Console.Write("Enter email address: ");
-        var email = Console.ReadLine();
+        var email = Console.ReadLine()!;
+        var contact = contacts.FirstOrDefault(x => x.Email == email);
 
-        if (email != null)
+        if (contact != null)
         {
-               var res = _contacts.DeleteContactFromList(email);
+            var res = _contacts.DeleteContactFromList(email);
 
-            if (res != null)
-            {
-                Console.WriteLine($"First Name: {res.FirstName}");
-                Console.WriteLine($"Last Name: {res.LastName}");
-                Console.WriteLine($"Phone Number: {res.PhoneNumber}");
-                Console.WriteLine($"Email: {res.Email}");
-                Console.WriteLine($"Address: {res.Address}");
-                Console.WriteLine();
-                Console.WriteLine("Contact deleted press any key to return to menu...");
-               
-            }
-            else
-            {
-                Console.WriteLine("Contact not found press any key to return to menu...");
 
-            }   
+
+
+            Console.WriteLine("Contact deleted press any key to return to menu...");
+        }
+
+        else
+        {
+            Console.WriteLine("Contact not found press any key to return to menu...");
+
+        }   
 
             
 
-        }
+        
 
 
     }
